@@ -4,7 +4,7 @@
 
 [solutions here](https://mostafain.github.io/JavaScript-For-Everyone-Exercises/ExercisesIndex.html)
 
-![screetshotDemo]("./demoPic.png");
+![screenshot Demo](demoPic.png);
 
 
 ## Table of Contents
