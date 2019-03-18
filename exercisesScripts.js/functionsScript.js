@@ -116,6 +116,16 @@ console.log(
     "m/s"
 );
 
+// 11. Weight of a substance is calculated as follows: weight = mass x gravity. Write a function which calculates weight.
+function CalWeight(mass, gravity) {
+    var weight = mass * gravity;
+    return weight;
+}
+console.log("The weight of this substance is = " + CalWeight(23, 12) + "kg");
+console.log("The weight of this substance is = " + CalWeight(24, 13) + "kg");
+console.log("The weight of this substance is = " + CalWeight(25, 14) + "kg");
+
+
 /* 12. Temperature in ˚C can be converted to ˚F using this formula: ˚F = (˚C x 9 / 5) + 32. Write a function 
 which convert ˚C to ˚F convertCelsiusToFahrenheit. */
 function ConvertCelsiusToFahrenheit(C) {
@@ -336,14 +346,9 @@ function removeItem(array, index) {
 console.log(removeItem(Arr, 4));
 console.log(Arr);
 
-// 11. Weight of a substance is calculated as follows: weight = mass x gravity. Write a function which calculates weight.
-function CalWeight(mass, gravity) {
-    var weight = mass * gravity;
-    return weight;
-}
-console.log("The weight of this substance is = " + CalWeight(23, 12) + "kg");
-console.log("The weight of this substance is = " + CalWeight(24, 13) + "kg");
-console.log("The weight of this substance is = " + CalWeight(25, 14) + "kg");
+// 24. Declare a function name sumOfNumbers. It takes a number parameter and it adds all the numbers in that range
+
+
 
 // d.  Declare a function name printArray. It takes array as a parameter and it prints out each value of the array.
 var cars = ["toyota", "mazda", "BMW", "benz", "nissan", "ford"];
