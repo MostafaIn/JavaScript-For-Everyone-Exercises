@@ -1,6 +1,10 @@
-# JavaScript For Everyone Exercises solutions.
+# JavaScript For Everyone Exercises with solutions.
 
-![js]("demoPic.png");
+#### Demo
+
+[solutions here](https://mostafain.github.io/JavaScript-For-Everyone-Exercises/ExercisesIndex.html)
+
+![screetshotDemo]("/demoPic.png");
 
 
 ## Table of Contents
