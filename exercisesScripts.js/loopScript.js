@@ -109,6 +109,10 @@ function myFunc(item, index, array) {
     console.log(index + 1, item);
 }
 
+const product=['apple','milk','paper','pc','bread','garlic','onion'];
+product.forEach((i, e) => {
+    console.log(`${e + 1}.${i}`);
+})
 
 console.log(" ");
 

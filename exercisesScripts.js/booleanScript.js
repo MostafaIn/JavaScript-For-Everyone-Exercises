@@ -14,5 +14,27 @@ console.log("********** 5. BOOLEAN **********");
 //   console.log("you are not the true person.");
 // }
 
+// 3. 
+console.log(`4 > 3 is ${4 > 3}`);
+console.log(`4 >= 3 is ${4 >= 3}`);
+console.log(`4 < 3 is ${4 < 3}`);
+console.log(`4 <= 3 is ${4 <= 3}`);
+console.log(`4 == 4 is ${4 == 4}`);
+console.log(`4 === 4 is ${4 === 4}`);
+console.log(`4 != 4 is ${4 != 4}`);
+console.log(`4 !== 4 is ${4 !== 4}`);
+console.log(`4 != '4' is ${4 != '4'}`);
+console.log(`4 == '4' is ${4 == '4'}`);
+console.log(`4 === '4' is  ${4 === '4'}`);
+
 console.log(" ");
+
+
+
+
+
+
+
+
+
 

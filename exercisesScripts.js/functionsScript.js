@@ -346,7 +346,195 @@ function removeItem(array, index) {
 console.log(removeItem(Arr, 4));
 console.log(Arr);
 
-// 24. Declare a function name sumOfNumbers. It takes a number parameter and it adds all the numbers in that range
+// 24. Declare a function name sumOfNumbers. It takes a number parameter and it adds all the numbers in that range.
+function sumOfNumbers1(num1, num2, num3, num4, num5) {
+    var sum = num1 + num2 + num3 + num4 + num5;
+    return sum;
+}
+console.log(sumOfNumbers1(12, 12, 26, 50, 12));
+
+// add all the items of an arry.
+var s = [12, 13, 26, 50, 102, 202, 33, 7, 22, 8, 61, 1].reduce(adds);
+function adds(a, b) {
+    return a + b;
+}
+console.log(s);
+
+// 25. & 26. Declare a function name sumOfOdds & sumOf Evens. It takes a number parameter and it adds all the odd numbers in that - range.
+function sumOfNumbers() {
+    var someNum = [23, 34, 45, 56, 67, 78, 90, 43, 76, 8];
+    var OddsSum = 0;
+    var EvensSum = 0;
+    for (i = 0; i <= someNum.length - 1; i++) {
+        if (someNum[i] % 2 == 0) {
+            EvensSum += someNum[i];
+            console.log(someNum[i] + " is even.");
+        } else {
+            OddsSum += someNum[i];
+            console.log(someNum[i] + " is odd.");
+        }
+    }
+    return { SumofEvenNumbers: EvensSum, SumofOddNumbers: OddsSum };
+}
+console.log(sumOfNumbers());
+
+
+/***  Declare a function name someNums. It takes a number parameter and it recognize that the number is ODD or EVEN then push it to the array,
+then reduce the numbers of this array with the help of another function name sumOfArr. */
+let oddNums = [];
+let evenNums = [];
+function someNums(number) {
+    if (number % 2 == 0) {
+        console.log(number + ' is even.');
+        evenNums.push(number);
+    } else {
+        console.log(number + ' is odd.');
+        oddNums.push(number);
+    }
+}
+function sumOfArr(arr) {
+    return arr.reduce((a, b) => a + b);
+}
+// 27.Declare a function name evensAndOdds.It takes a positive integer as parameter and it counts number of evens and odds in the number.
+function evensANDodds(countsNums) {
+    return countsNums.length;
+}
+console.log(someNums(3));
+console.log(someNums(2));
+console.log(someNums(8));
+console.log(someNums(9));
+console.log(someNums(5));
+console.log(someNums(1));
+console.log(someNums(4));
+console.log(someNums(6));
+console.log(someNums(7));
+console.log(oddNums);
+console.log(evensANDodds(oddNums) + ' odd numbers are available in the list.');
+console.log(evenNums);
+console.log(evensANDodds(evenNums) + ' even numbers are available in the list.');
+console.log(sumOfArr(oddNums));
+console.log(sumOfArr(evenNums))
+
+
+// 28. Write a funcition which takes any number of arguments and return the sum of the arguments
+function sumTo(n) {// this function calculate the sum of n numbers.
+    let sum = 0;
+    for (let i = 0; i <= n; i++) {
+        sum += i;
+    }
+    return sum;
+}
+console.log(sumTo(6));
+console.log(sumTo(50));
+
+function sumToEvens(n) {// this function calculate the sum of evens of n numbers.
+    let sum = 0;
+    for (let i = 0; i <= n; i++) {
+        if (i % 2 === 0) {
+            sum += i;
+        }
+    }
+    return sum;
+}
+console.log(sumToEvens(8));
+console.log(sumToEvens(5));
+
+function sumToOdds(n) {// this function calculate the sum of evens of n numbers.
+    let sum = 0;
+    for (let i = 0; i <= n; i++) {
+        if (i % 2 !== 0) {
+            sum += i;
+        }
+    }
+    return sum;
+}
+console.log(sumToOdds(9));
+console.log(sumToOdds(6));
+
+
+// 29. Writ a function which generates a randomUserIP.
+
+
+// 30. Write a function which generates a randomMacAddress.
+
+
+/* 31. Declare a function name randomHexaNumberGenerator. When this function is called it generates a random hexadecimal number.
+ The function return the hexadecimal number. */
+function randomHexaNumberGenerator() {
+    let r = Math.floor(Math.random() * 256).toString(16);
+    let g = Math.floor(Math.random() * 256).toString(16);
+    let b = Math.floor(Math.random() * 256).toString(16);
+    r = (r.length === 2) ? r : '0' + r;
+    g = (g.length === 2) ? g : '0' + g;
+    b = (b.length === 2) ? b : '0' + b;
+    return `#${r}${g}${b}`;
+}
+console.log(randomHexaNumberGenerator());
+
+
+function randomRGBcolorGenerator() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    let color = `rgb(${r},${g},${b})`;
+    return color;
+}
+console.log(randomRGBcolorGenerator());
+
+
+// 32. Declare a function name userIdGenerator. When this function is called it generates seven character id. The function return the id.
+function userIdGenerator(l) {
+    let charList = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    let id = '';
+    for (let i = 0; i < l; i++) {
+        id += charList.charAt(Math.floor(Math.random() * charList.length));
+    }
+    return id;
+}
+console.log(userIdGenerator(7));
+
+function finNumberPlate() { // this function generate the sample of finnish car numberplate randomly.
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const numbers = "0123456789";
+    let l = '';
+    let n = '';
+    for (let i = 0; i < 3; i++) {
+        l += letters.charAt(Math.floor(Math.random() * letters.length));
+        n += numbers.charAt(Math.floor(Math.random() * numbers.length));
+    }
+    // for (let i = 0; i < 3; i++) {
+    //   n += numbers.charAt(Math.floor(Math.random() * numbers.length));
+    // }
+    let numberPlate = `${l} - ${n}`;
+    return numberPlate;
+}
+console.log(finNumberPlate());
+
+
+//33. Modify question number n . Declare a function name userIdGeneratedByUser. It doesn’t take any parameter but it takes two inputs using prompt(). One of the input is the number of characters and the second input is the number of ids which are supposed to be generated.
+let numberOfChars = 4;
+let numberOfIds = 2;
+function userIdGeneratedByUser(chars, ids) {
+    const characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    let userId = '';
+    let userIdList = [];
+    for (let i = 0; i < chars; i++) {
+        userId += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    for (let i = 0; i < ids; i++) {
+        userIdList.push(userId);
+    }
+    return userIdList;
+}
+console.log(userIdGeneratedByUser(numberOfChars, numberOfIds));
+
+
+
+
+
+
+
+
 
 
 

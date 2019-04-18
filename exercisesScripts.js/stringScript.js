@@ -1,5 +1,5 @@
 console.log("********** 4.STRING **********");
-////////// 4. String
+////////// ********** 4.STRING **********
 // 7. Use substr to slice out the phase because because because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
 let sentence =
     "You cannot end a sentence with because because because is a conjunction";
