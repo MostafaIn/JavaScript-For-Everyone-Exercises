@@ -324,14 +324,14 @@ function capitalizeArray(carsArr) {
 console.log(capitalizeArray(["toyota", "nissan", "mazda"]));
 
 // 22. Declare a function name addItem. It takes an item parameter and it returns an array after adding the item
-
+const ITCos= [];
 function addItems(array, item) {
     let newArray = array.slice();
     newArray.push(item);
     return newArray;
 }
-console.log(addItems(ITCompanies, "YLE"));
-console.log(addItems(ITCompanies, "Samsung"));
+console.log(addItems(ITCos, "YLE"));
+console.log(addItems(ITCos, "Samsung"));
 
 // 23. Declare a function name removeItem. It takes an index parameter and it returns an array after removing an item
 const Arr = [12, 13, 14, 15, 16, 17, 18, 19, 20];
@@ -527,6 +527,9 @@ function userIdGeneratedByUser(chars, ids) {
     return userIdList;
 }
 console.log(userIdGeneratedByUser(numberOfChars, numberOfIds));
+
+
+// 34.Write a function name rgbColorGenerator and it generates rgb colors.
 
 
 
