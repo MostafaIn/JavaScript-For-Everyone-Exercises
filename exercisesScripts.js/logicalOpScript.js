@@ -8,6 +8,9 @@ if (4 > 3 && 10 < 12) {
 } else {
     console.log("FALSE.");
 }
+
+
+
 // b. 4 > 3 && 10 > 12
 if (4 > 3 && 10 > 12) {
     console.log("TRUE.");

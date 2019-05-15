@@ -14,6 +14,7 @@ console.log(" the first item of array is = " + arrayNumbers[0]);
 
 const middleItem = arrayNumbers[Math.floor(arrayNumbers.length / 2)];
 console.log("the middle item of the array is = " + middleItem);
+
 const lastItem = arrayNumbers[Math.floor(arrayNumbers.length) - 1];
 console.log("the last item of array is = " + lastItem);
 
@@ -34,7 +35,7 @@ console.log(mixedDataTypes.length);
 /* 6. Declare an array  variable name itCompanies and assign initial values 
 Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon. */
 // 7. Print the array using console.log()
-var itCompanies = [
+const itCompanies = [
     "Facebook",
     "Google",
     "Microsoft",
@@ -51,13 +52,13 @@ console.log(`there are ${itCompanies.length} companies are listed here!`);
 console.log(
     itCompanies[0].toUpperCase() + " is the first company in this list."
 );
-var middleCo = itCompanies[Math.floor(itCompanies.length / 2)];
+let middleCo = itCompanies[Math.floor(itCompanies.length / 2)];
 console.log(middleCo.toUpperCase() + " is in the middle of this list.");
-var lastCo = itCompanies[Math.floor(itCompanies.length - 1)];
+let lastCo = itCompanies[Math.floor(itCompanies.length - 1)];
 console.log(lastCo.toUpperCase() + " is the last company name in the list.");
 
 // 11. Change every company to uppercase and print them out
-for (var i = 0; i < itCompanies.length; i++) {
+for (let i = 0; i < itCompanies.length; i++) {
     console.log(i + 1 + " " + itCompanies[i].toUpperCase()); // i+1 execute a number in front of each item.
 }
 console.log("  ***** now the items in uppercase. *****");
@@ -79,7 +80,7 @@ checkCo();
 
 // 14. Filter out companies which have more than two ‘o’ without the filter method
 
-for (var o = 0; o <= itCompanies.length; o++) {
+for (let o = 0; o <= itCompanies.length; o++) {
     if (itCompanies[o].includes("oo")) {
         console.log(itCompanies[o] + " contain oo .");
         break;
@@ -116,7 +117,7 @@ console.log(midIdCo);
 
 // 21.Remove the first IT company from the array
 console.log(itCompanies);
-// console.log(itCompanies.shift());
+console.log(itCompanies.shift());
 console.log(itCompanies);
 
 // 22. Remove the middle IT company or companies from the array
@@ -128,6 +129,7 @@ for (let i = 0; i < itCompanies.length; i++) {
     }
 }
 console.log(itCompanies);
+
 // 23. Remove the last IT company from the array
 itCompanies.pop();
 console.log(itCompanies);
@@ -136,3 +138,6 @@ console.log(itCompanies);
 console.log(itCompanies.splice());
 
 console.log(" ");
+
+
+

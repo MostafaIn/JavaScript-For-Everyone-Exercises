@@ -5,7 +5,7 @@ console.log("********** 12. FUNCTION **********");
 // 1. Declare a function fullName and it print out your full name.
 
 function myName(first_name, last_name) {
-    var full_name = first_name + last_name;
+    const full_name = first_name + last_name;
     return full_name;
 }
 console.log(myName("mostafa ", "hazareh."));
@@ -16,18 +16,18 @@ console.log(myName("Niini ", "Jiiji"));
 lastName as a parameter and it returns your full name. */
 
 function my_name(fName, lName) {
-    var full_name = fName + lName;
+    const full_name = fName + lName;
     return full_name;
 }
 console.log(my_name("Nicole ", "Kidman")); // call the function to concat the name and also it can
 
 // 3. Declare a function addNumbers and it takes three parameters and it returns sum.
 function addNumbers(num1, num2, num3) {
-    var sum = num1 + num2 + num3;
+    let sum = num1 + num2 + num3;
     return sum;
 }
-var sumResult = addNumbers(12, 13, 34);
-var d = addNumbers(245, 23, 4);
+let sumResult = addNumbers(12, 13, 34);
+let d = addNumbers(245, 23, 4);
 console.log(`12 + 13 + 34 = ${sumResult}`);
 console.log(`245 + 23 + 4 = ${d}`);
 console.log(
@@ -35,8 +35,8 @@ console.log(
 );
 
 // 4. An area of a rectangle is calculated as follows: area = length x width. Write a function which calculates areaOfRectangle.
-function areaOfRectangle(length, width) {
-    var area = length * width;
+const areaOfRectangle = (length, width) => {
+    const area = length * width;
     return area;
 }
 console.log(" The area of rectangle is = " + areaOfRectangle(14, 6) + "cm");
@@ -75,7 +75,7 @@ console.log(
 
 // 7. Area of a circle is calculated as follows: area = π x r x r. Write a function which calculates areaOfCircle
 function areaOfCircle(radius) {
-    var pi = Math.PI;
+    let pi = Math.PI;
     return pi * radius * radius;
 }
 console.log("The area of this circle is = " + areaOfCircle(21).toFixed(2)); //toFixed is declare two decimal integer.
@@ -96,19 +96,19 @@ function CalDensity(mass, volume) {
     return density;
 }
 console.log("density of this substance is = " + CalDensity(14, 2) + "ml");
-console.log("density of this substance is = " + CalDensity(25, 3) + "ml");
+console.log("density of this substance is = " + CalDensity(25, 3).toFixed(3) + "ml");
 console.log("density of this substance is = " + CalDensity(36, 4) + "ml");
 
 /* 10. Speed is calculated by dividing the total distance covered by a moving object divided
    by the total amount of time taken. Write a function which calculates a speed of a moving object, speed. */
 function CalObjSpeed(DistanceTotal, TimeTotal) {
-    var speed = DistanceTotal / TimeTotal;
+    let speed = DistanceTotal / TimeTotal;
     return speed;
 }
 console.log(
     "The object moves 150m within 10s. the speed is =  " +
     CalObjSpeed(150, 10) +
-    "m/s"
+    " m/s "
 );
 console.log(
     "The object moves 300m within 25s. the speed is =  " +
@@ -118,7 +118,7 @@ console.log(
 
 // 11. Weight of a substance is calculated as follows: weight = mass x gravity. Write a function which calculates weight.
 function CalWeight(mass, gravity) {
-    var weight = mass * gravity;
+    let weight = mass * gravity;
     return weight;
 }
 console.log("The weight of this substance is = " + CalWeight(23, 12) + "kg");
@@ -129,7 +129,7 @@ console.log("The weight of this substance is = " + CalWeight(25, 14) + "kg");
 /* 12. Temperature in ˚C can be converted to ˚F using this formula: ˚F = (˚C x 9 / 5) + 32. Write a function 
 which convert ˚C to ˚F convertCelsiusToFahrenheit. */
 function ConvertCelsiusToFahrenheit(C) {
-    var Fahrenheit = (C * 9) / 5 + 32;
+    let Fahrenheit = (C * 9) / 5 + 32;
     return Fahrenheit;
 }
 console.log(
@@ -143,7 +143,7 @@ console.log(
 );
 // 12.1 this function convert the Fahrenheit to Celsius using this formula ˚C = (˚F - 32) * 5/9.
 function ConvertFahrenheitToCelsius(F) {
-    var Celsius = ((F - 32) * 5) / 9;
+    let Celsius = (F - 32) * 5 / 9;
     return Celsius;
 }
 console.log(
@@ -163,9 +163,9 @@ console.log(
 );
 
 // 13. Body mass index(BMI) is calculated as follows: bmi = weight in Kg / (height x height) in m2. Write a function which calculates bmi.
-function BMI(weight, height) {
-    var height = height / 100; // get height back to centimeter.
-    var bmi = weight / (height * height);
+function BMI(w, h) {
+    let height = h / 100; // get height back to centimeter.
+    let bmi = w / (height ** 2);
     return bmi;
 }
 console.log("my Body Mass Index is = " + BMI(89, 174) + " kg/m2");
@@ -179,9 +179,9 @@ Check if a person is underweight, normal, overweight or obsess based the informa
 - Normal weight: BMI is 18.5 to 24.9
 - Overweight: BMI is 25 to 29.9
 - Obese: BMI is 30 or more */
-function CalBMI(weight, height) {
-    var height = height / 100; // get height back to centimeter.
-    var bmi = weight / (height * height);
+function CalBMI(w, h) {
+    let height = h / 100; // get height back to centimeter.
+    let bmi = w / (height ** 2);
     if (bmi >= 30) {
         console.log(
             "your BMI is " + bmi.toFixed(2) + ".  👎 Obsess: BMI is 30 or more"
@@ -208,7 +208,7 @@ function CalBMI(weight, height) {
 CalBMI(69, 174);
 CalBMI(79, 164);
 CalBMI(89, 154);
-
+CalBMI(59, 184);
 // 14. Write a function called checkSeason, it takes a month parameter and returns the season:Autumn, Winter, Spring or Summer.
 function checkSeason(month) {
     switch (month) {
@@ -253,7 +253,7 @@ console.log(Date());
 
 // 15. Math.max returns its largest argument. Write a function findMax that takes three arguments and returns their maxiumum with out using Math.max method.
 function findMax(n1, n2, n3) {
-    var maximum;
+    let maximum;
     if (n1 > n2 && n1 > n3) {
         maximum = n1;
     } else if (n2 > n1 && n2 > n3) {
@@ -270,7 +270,7 @@ console.log("the maximum number is = " + findMax(-13, -22, -48));
 
 // 16. Linear equation is calculated as follows: ax + b = c. Write a function which calculates value of a linear equation, solveLinEquation.
 function solveLinEquation(a, b, c) {
-    var x = (c - b) / a;
+    let x = (c - b) / a;
     return x;
 }
 console.log("X = " + solveLinEquation(5, 2, 22));
@@ -292,7 +292,7 @@ printArr([4, 346, 35, 2]);
 // 19. Declare a function name swapValues. This function swaps value of x to y.
 function swapValues(x, y) {
     console.log(`The value of x = ${x} and y = ${y}`);
-    var m = x;
+    let m = x;
     x = y;
     y = m;
     return `BUT NOW the  x = ${x} and y = ${y}`;
@@ -324,7 +324,7 @@ function capitalizeArray(carsArr) {
 console.log(capitalizeArray(["toyota", "nissan", "mazda"]));
 
 // 22. Declare a function name addItem. It takes an item parameter and it returns an array after adding the item
-const ITCos= [];
+const ITCos = [];
 function addItems(array, item) {
     let newArray = array.slice();
     newArray.push(item);
@@ -334,17 +334,22 @@ console.log(addItems(ITCos, "YLE"));
 console.log(addItems(ITCos, "Samsung"));
 
 // 23. Declare a function name removeItem. It takes an index parameter and it returns an array after removing an item
-const Arr = [12, 13, 14, 15, 16, 17, 18, 19, 20];
-function removeItem(array, index) {
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] === index) {
-            Arr.splice(i, 1);
-        }
-    }
-    return Arr;
-}
-console.log(removeItem(Arr, 4));
-console.log(Arr);
+const NumList = [12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+// function removeItem(index) {
+//     for (let i = 0; i < NumList.length; i++) {
+//         if (NumList[i] === index) {
+
+//         }
+
+//     }
+// }
+// console.log(removeItem());
+
+
+
+
+
 
 // 24. Declare a function name sumOfNumbers. It takes a number parameter and it adds all the numbers in that range.
 function sumOfNumbers1(num1, num2, num3, num4, num5) {
@@ -354,11 +359,22 @@ function sumOfNumbers1(num1, num2, num3, num4, num5) {
 console.log(sumOfNumbers1(12, 12, 26, 50, 12));
 
 // add all the items of an arry.
-var s = [12, 13, 26, 50, 102, 202, 33, 7, 22, 8, 61, 1].reduce(adds);
+const sn = [12, 13, 26, 50, 102, 202, 33, 7, 22, 8, 61, 1];
+function addAllItems() {
+    let summm = 0;
+    for (let i = 0; i < sn.length; i++) {
+        summm += sn[i];
+    }
+    return summm;
+}
+
+console.log(addAllItems());
+
+// console.log(sn.reduce());
 function adds(a, b) {
     return a + b;
 }
-console.log(s);
+console.log(adds(23, 27));
 
 // 25. & 26. Declare a function name sumOfOdds & sumOf Evens. It takes a number parameter and it adds all the odd numbers in that - range.
 function sumOfNumbers() {
@@ -391,10 +407,13 @@ function someNums(number) {
         console.log(number + ' is odd.');
         oddNums.push(number);
     }
+    console.log(arguments.callee.name);
+
 }
 function sumOfArr(arr) {
     return arr.reduce((a, b) => a + b);
 }
+sumOfArr([3, 2, 1]);
 // 27.Declare a function name evensAndOdds.It takes a positive integer as parameter and it counts number of evens and odds in the number.
 function evensANDodds(countsNums) {
     return countsNums.length;
@@ -437,7 +456,7 @@ function sumToEvens(n) {// this function calculate the sum of evens of n numbers
     return sum;
 }
 console.log(sumToEvens(8));
-console.log(sumToEvens(5));
+console.log(sumToEvens(6));
 
 function sumToOdds(n) {// this function calculate the sum of evens of n numbers.
     let sum = 0;
@@ -472,14 +491,14 @@ function randomHexaNumberGenerator() {
 console.log(randomHexaNumberGenerator());
 
 
-function randomRGBcolorGenerator() {
-    let r = Math.floor(Math.random() * 256);
-    let g = Math.floor(Math.random() * 256);
-    let b = Math.floor(Math.random() * 256);
-    let color = `rgb(${r},${g},${b})`;
-    return color;
-}
-console.log(randomRGBcolorGenerator());
+// function randomRGBcolorGenerator() {
+//     let r = Math.floor(Math.random() * 256);
+//     let g = Math.floor(Math.random() * 256);
+//     let b = Math.floor(Math.random() * 256);
+//     let color = `rgb(${r},${g},${b})`;
+//     return color;
+// }
+// console.log(randomRGBcolorGenerator());
 
 
 // 32. Declare a function name userIdGenerator. When this function is called it generates seven character id. The function return the id.
@@ -502,9 +521,6 @@ function finNumberPlate() { // this function generate the sample of finnish car 
         l += letters.charAt(Math.floor(Math.random() * letters.length));
         n += numbers.charAt(Math.floor(Math.random() * numbers.length));
     }
-    // for (let i = 0; i < 3; i++) {
-    //   n += numbers.charAt(Math.floor(Math.random() * numbers.length));
-    // }
     let numberPlate = `${l} - ${n}`;
     return numberPlate;
 }
@@ -512,24 +528,138 @@ console.log(finNumberPlate());
 
 
 //33. Modify question number n . Declare a function name userIdGeneratedByUser. It doesn’t take any parameter but it takes two inputs using prompt(). One of the input is the number of characters and the second input is the number of ids which are supposed to be generated.
-let numberOfChars = 4;
-let numberOfIds = 2;
+// let numberOfChars = 4;
+// let numberOfIds = 2;
 function userIdGeneratedByUser(chars, ids) {
     const characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     let userId = '';
     let userIdList = [];
     for (let i = 0; i < chars; i++) {
         userId += characters.charAt(Math.floor(Math.random() * characters.length));
+
     }
-    for (let i = 0; i < ids; i++) {
+    for (let j = 0; j < ids; j++) {
         userIdList.push(userId);
     }
     return userIdList;
 }
-console.log(userIdGeneratedByUser(numberOfChars, numberOfIds));
+console.log(userIdGeneratedByUser(4, 3));
 
 
 // 34.Write a function name rgbColorGenerator and it generates rgb colors.
+function rgbColorGenerator() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    return `RGB(${r},${g},${b})`;
+}
+console.log(rgbColorGenerator());
+
+
+// 35. Write a function arrayOfHexaColors which return any number of hexadecimal colors in an array.
+function arrayOfHexaColors(anyNum) {
+    colorArray = [];
+    for (let i = 0; i < anyNum; i++) {
+        let r = Math.floor(Math.random() * 256).toString(16);
+        let g = Math.floor(Math.random() * 256).toString(16);
+        let b = Math.floor(Math.random() * 256).toString(16);
+        r = (r.length === 2) ? r : '0' + r;
+        g = (g.length === 2) ? g : '0' + g;
+        b = (b.length === 2) ? b : '0' + b;
+        let color = `#${r}${g}${b}`;
+        colorArray.push(color);
+    }
+    return colorArray;
+};
+console.log(arrayOfHexaColors(3));
+
+
+// 36. Write a function arrayOfRgbColors which return any number of RGB colors in an array.
+function arrayOfRGBcolors(anyNum) {
+    const rgbArray = [];
+    for (let i = 0; i < anyNum; i++) {
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        const color = `RGB(${r},${g},${b})`;
+        rgbArray.push(color);
+    }
+    return rgbArray;
+}
+console.log(arrayOfRGBcolors(3));
+
+// 37. Write a function convertHexaToRgb which converts hexa color to rgb and it returns an rgb color.
+function HexaToRGB(hexa) {
+    let rgb = hexa.toString(16);
+    return rgb;
+}
+console.log(HexaToRGB(d));
+
+const convertHexaToRgb = (r, g, b)=> {
+    let red = HexaToRGB(r);
+    let green = HexaToRGB(g);
+    let blue = HexaToRGB(b);
+    return `rgb(${red},${green},${blue})`;
+}
+
+
+
+
+
+
+
+
+
+// 38. Write a function convertRgbToHexa which converts rgb to hexa color and it returns an hexa color.
+const rgbToHex = (rgb) => {
+    let hex = Number(rgb).toString(16);
+    if (hex.length < 2) {
+        hex = '0' + hex;
+    }
+    return hex;
+};
+console.log(rgbToHex(77));
+const fullColorHex = (r, g, b) => {
+    let red = rgbToHex(r);
+    let green = rgbToHex(g);
+    let blue = rgbToHex(b);
+    return `#${red}${green}${blue}`;
+}
+console.log(fullColorHex(101, 120, 13));
+
+
+
+
+
+
+
+
+//47. Write a function called isPrime, which checks if a number is prime number.
+function isPrime(num) {
+    if (num < 1) {
+        return false;
+    } else if (num <= 3) {
+        return true;
+    } else if (num % 2 === 0 || num % 3 === 0) {
+        return false;
+    }
+
+    let i = 5
+    while (i * i <= num) {
+        if (num % i === 0 || num % (i + 2) === 0) {
+            return false
+        }
+        i += 6
+    }
+    return true
+}
+console.log(isPrime(11));
+
+
+
+
+
+
 
 
 

@@ -86,9 +86,13 @@ console.log(s.split(" "));
 let l = s.split(' ');
 console.log(l[4]);
 const t = l.forEach(e => {
-    console.log(e.charAt(0).toUpperCase() + e.slice(1));
+    console.log(e.charAt(0).toUpperCase() + e.slice(1));    
 })
-console.log(t);
+
+
+
+
+
 
 
 

@@ -3,20 +3,20 @@ console.log("********** 10. LOOP **********");
 
 // a. Iterate 0 to 10 using for loop, do the same using while and do while loop.
 console.log("** for loop ");
-for (var i = 0; i <= 10; i++) {
+for (let i = 0; i <= 10; i++) {
     console.log(i);
 }
-for (var k = 10; k >= 0; k--) {
+for (let k = 10; k >= 0; k--) {
     console.log(k);
 }
 console.log("** while loop ");
-var j = 0;
+let j = 0;
 while (j <= 10) {
     console.log(j);
     j++;
 }
 console.log("**** do-while loop ****");
-var x = 0;
+let x = 0;
 do {
     console.log(x);
     x++;
@@ -24,9 +24,14 @@ do {
 
 // c. Iterate the array using a for loop and print out the items uppercase.
 const itCos = ['mircrosoft', 'ibm', 'apple', 'nokia', 'amazon', 'samsung', 'sony', 'google'];
-for (var i = 0; i < itCos.length; i++) {
+for (let i = 0; i < itCos.length; i++) {
     console.log(i + 1 + " " + itCos[i].toUpperCase()); // i+1 execute a number in front of each item.
 }
+// and print out the first letter of each items uppercase.
+itCos.forEach(e => {
+    console.log(e.charAt(0).toUpperCase() + e.slice(1));
+
+})
 /* d. Check if a certain company exists in the ITCompanies array. 
 If it exist return the company else return a company is not found. */
 console.log("*********************");
@@ -64,6 +69,11 @@ const skills = ["HTML", "CSS", "JavaScript"];
 for (let i = 0; i < skills.length; i++) {
     console.log(skills[i]);
 }
+console.log(skills.sort());
+
+skills.forEach(i => {
+    console.log(i);
+})
 
 // 5. Use for loop to iterate from 0 to 100 and print only even numbers
 for (let i = 0; i <= 20; i++) {
@@ -78,6 +88,8 @@ for (let i = 0; i <= 20; i++) {
         console.log(i);
     }
 }
+
+
 console.log("#############################################");
 
 // 7. Use for loop to iterate from 0 to 100 and print and print the sum of all numbers.
@@ -109,7 +121,7 @@ function myFunc(item, index, array) {
     console.log(index + 1, item);
 }
 
-const product=['apple','milk','paper','pc','bread','garlic','onion'];
+const product = ['apple', 'milk', 'paper', 'pc', 'bread', 'garlic', 'onion'];
 product.forEach((i, e) => {
     console.log(`${e + 1}.${i}`);
 })

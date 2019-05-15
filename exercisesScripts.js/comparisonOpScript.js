@@ -13,6 +13,10 @@ if (value1 > value2) {
 } else {
     console.log("FALSE.");
 }
+// or
+console.log(value1 < value2 ? 'yes' : 'no');
+
+
 // b. 4 >= 3
 if (value1 >= value2) {
     console.log("TRUE.");
