@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Test</title>
+</head>
+
+<body>
+    <h1>JavaScript Test </h1>
+    <h5>done by Mostafa Hazareh</h5>
+    <script>
+        /* 1.Create a function which solve quadratic equation ax2 + bx + c = 0. A quadratic equation may have one, 
+        two or no solution. The function should return a set of the solution/s.*/
+        const solveQuadratic = (a, b, c) => {
+            let delta = Math.sqrt(b * b - 4 * a * c);
+            let d = 2 * a;
+            let firstRoot = (-b + delta) / d;
+            let secondRoot = (-b - delta) / d;
+            return { firstRoot, secondRoot };
+        }
+        console.log(solveQuadratic(1, 4, 4));
+        console.log(solveQuadratic(1, -1, -2));
+
+        // 2.Create a function called isPrime which check if a number is prime or not.
+        const isPrime = num => {
+            if (num < 1) {
+                return false;
+            } else if (num <= 3) {
+                return true;
+            } else if (num % 2 === 0 || num % 3 === 0) {
+                return false;
+            }
+            let i = 5
+            while (i * i <= num) {
+                if (num % i === 0 || num % (i + 2) === 0) {
+                    return false
+                }
+                i += 6
+            }
+            return true
+        }
+        console.log(isPrime(0));
+        console.log(isPrime(2));
+
+        /* 3. Write a function rangeOfPrimes. It takes two parameters, a starting number and an ending number .
+         The function returns an object with properties primes and count. The primes value is an array of
+         prime numbers and count value is the number of prime numbers in the array. See example*/
+
+
+        /* 4.Create a function called isEmpty which check if the parameter is empty.
+        If the parameter is empty, it returns true else it returns false.*/
+        const isEmpty = data => {
+            return (
+                data === null ||
+                data === undefined ||
+                (typeof data == 'number') ||
+                (typeof data === 'string' && data.trim().length === 0) ||
+                (typeof data === 'object' && Object.keys(data).length === 0)
+            );
+        }
+        console.log(isEmpty(''));
+        console.log(isEmpty('Asabeneh'));
+        console.log(isEmpty(['HTML', 'CSS', 'JS']));
+        console.log(isEmpty({ name: 'Asabeneh', age: 200 }));
+
+
+        /* 5. a.  Create a function called reverse which take a parameter and it returns the reverse of the parameter.
+         Don't use the built in reverse method.*/
+        const reverseItem = para => {
+            const revItem = para.split('');
+            let rev = [];
+            for (i = revItem.length - 1; i >= 0; i--) {
+                rev.push(revItem[i]);
+            }
+            return rev.join('');
+        }
+        console.log(reverseItem('cat'));
+        console.log(reverseItem('123'));
+
+        // 5. b.Create a function called isPalindrome which check if a parameter is a palindrome or not.
+        const isPalindrome = str => {
+            let string = str.split('');
+            let lTr = [];
+            let rTl = [];
+            for (let i = 0; i < string.length; i++) {
+                lTr.push(string[i].toLowerCase());
+            }
+            for (let i = string.length - 1; i >= 0; i--) {
+                rTl.push(string[i].toLowerCase());
+            }
+            if (lTr.toString() === rTl.toString()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        console.log(isPalindrome('Noon'));
+        console.log(isPalindrome('Asab'));
+
+        /* 6. Create a function called countPalindrowWords which counts the number of palindrome words 
+        in the palindoromeWords array or in any array.*/
+        const palindromeWords = ['Anna', 'Asa', 'Civic', 'common', 'Kayak', 'Level', 'Madam', 'Mom', 'Noon ', 'Rotor', 'Sagas ', 'Solar', 'Stats', 'Tenet ', 'Wow'];
+        const countPalindrowWords = arr => {
+            const countItems = arr.length;
+            return `There are ${countItems} items in this array.`;
+
+        }
+        console.log(countPalindrowWords(palindromeWords));
+
+
+        // 7. Count the number of palindrome words in the following sentence.
+        const sentence = `He met his mom at noon and she was watching an epsoide of the begninging of her Solos. Her tenet helped her to level up her stats. After that he went to kayak driving Civic Honda.`.split(' ');
+        const countPalindromes = () => {
+            const palinW = [];
+            for (let i = 0; i < sentence.length - 1; i++) {
+                if (sentence[i] = isPalindrome(sentence[i])) {
+                    palinW.push(i);
+                }
+            }
+            return `there are ${palinW.length} palindrome words in this sentence.`;
+        }
+        console.log(countPalindromes());
+
+        // 8. 
+        const users = [
+            {
+                _id: 'ab12ex',
+                username: 'Alex',
+                email: 'alex@alex.com',
+                password: '123123',
+                createdAt: '17/05/2019 9:00 AM',
+                isLoggedIn: false
+            },
+            {
+                _id: 'fg12cy',
+                username: 'Asab',
+                email: 'asab@asab.com',
+                password: '123456',
+                createdAt: '17/05/2019 9:30 AM',
+                isLoggedIn: true
+            },
+            {
+                _id: 'zwf8md',
+                username: 'Brook',
+                email: 'brook@brook.com',
+                password: '123111',
+                createdAt: '17/05/2019 9:45 AM',
+                isLoggedIn: true
+            },
+            {
+                _id: 'eefamr',
+                username: 'Martha',
+                email: 'martha@martha.com',
+                password: '123222',
+                createdAt: '17/05/2019 9:50 AM',
+                isLoggedIn: false
+            },
+            {
+                _id: 'ghderc',
+                username: 'Thomas',
+                email: 'thomas@thomas.com',
+                password: '123333',
+                createdAt: '17/05/2019 10:00 AM',
+                isLoggedIn: false
+            }
+        ];
+
+        //a.Create a function called signUp which allows user to add to the collection. If user exists, inform the user that he has already an account.
+        const displayTime = () => {
+            const date = new Date();
+            const year = date.getFullYear();
+            const month = date.getMonth() + 1;
+            const day = date.getDay();
+            const hour = date.getHours();
+            let minute = date.getMinutes();
+            let t = '';
+            if (minute < 10) {
+                minute = '0' + minute;
+            }
+            if (hour <= 12) {
+                t = 'AM';
+            } else {
+                t = 'PM';
+            }
+            return `${day}/${month}/${year} ${hour}:${minute} ${t}`;
+        }
+        console.log(displayTime());
+
+        const userIdGenerator = () => {
+            const letters = 'abcdefghijklmnopqrstuv';
+            let id = '';
+            for (let i = 0; i < 6; i++) {
+                id += letters.charAt(Math.floor(Math.random() * letters.length));
+            }
+            let userId = id;
+            return userId;
+        }
+        console.log(userIdGenerator());
+
+        const singUp = (arr, _id, username, email, password, createdAt, isLoggedIn) => {
+            if (arr.username !== username) {
+                const newUser = arr.push({ _id, username, email, password, createdAt, isLoggedIn });
+                return arr;
+            } else {
+                return 'this account is exist.';
+
+            }
+        }
+        console.log(users);
+        console.log(singUp(users, userIdGenerator(), 'mostafa', 'mostafa@integrify.io', '222222', displayTime(), false));
+
+        // b. Create a function called signIn which allows user to sign in to the application
+        const singIn = (arr, username, password) => {
+            for (const user of arr) {
+                if (user.username === username && user.password === password) {
+                    return user.isLoggedIn = true;
+                }
+            }
+        }
+        console.log(singIn(users, 'mostafa', '222222'));
+
+
+        //9. 
+        const products = [
+            {
+                _id: 'eedfcf',
+                name: 'mobile phone',
+                description: 'Huawei Honor',
+                price: 200,
+                Rating: [{ userId: 'fg12cy', rating: 5 }, { userId: 'zwf8md', rating: 4.5 }],
+                likes: []
+            },
+            {
+                _id: 'aegfal',
+                name: 'Laptop',
+                description: 'MacPro: System Darwin',
+                price: 2500,
+                Rating: [],
+                likes: ['fg12cy']
+            },
+            {
+                _id: 'hedfcg',
+                name: 'TV',
+                description: 'Smart TV:Procaster',
+                price: 400,
+                Rating: [{ userId: 'fg12cy', rating: 5 }],
+                likes: ['fg12cy']
+            }
+        ];
+        // 9. a.Create a function called rateProduct which rates the product
+        console.log(products);
+        const rateProduct = (arr, name, rate) => {
+            for (const product of arr) {
+                if (product.name === name) {
+                    return product.Rating.push({ userId, rating });
+                }
+            }
+        }
+        console.log(rateProduct(products, 'Laptop', 'xxx', '5'));
+
+        // 9. b. Create a function called averageRating which calculate the average rating of a product
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

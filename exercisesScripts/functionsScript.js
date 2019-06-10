@@ -278,6 +278,22 @@ console.log("X = " + solveLinEquation(4, 1, 13));
 console.log("X = " + solveLinEquation(8, 2, 18));
 
 // 17. Quadratic equation is calculated as follows: ax2 + bx + c = 0. Write a function which calculates value or values of a quadratic equation, solveQuadEquation.
+function quadraticEquation(a, b, c) {
+    let delta = Math.sqrt(b * b - 4 * a * c);
+    let d = 2 * a;
+    let firstRoot = (-b + delta) / d;
+    let secondRoot = (-b - delta) / d;
+    return 'the first is = ' + firstRoot + ' and the sencond is = ' + secondRoot;
+}
+console.log(quadraticEquation(4, 4, 4));
+
+//
+function solveQuadEquation(a, b, c) {
+    var xOne = ((-b + (b ** 2 - 4 * a * c) ** 0.5) / 2) * a;
+    var xTwo = ((-b - (b ** 2 - 4 * a * c) ** 0.5) / 2) * a;
+    return { xOne, xTwo };
+}
+console.log(solveQuadEquation(2, 4, 4));
 
 // 18. Declare a function name printArray. It takes array as a parameter and it prints out each value of the array.
 function printArr(arr) {
@@ -305,7 +321,6 @@ function reverseArr(arr) {
     let reverseArr = [];
     for (let i = arr.length - 1; i >= 0; i--) {
         reverseArr.push(arr[i]);
-        console.log(`${arr[i]}`);
     }
     return reverseArr;
 }
@@ -361,20 +376,20 @@ console.log(sumOfNumbers1(12, 12, 26, 50, 12));
 // add all the items of an arry.
 const sn = [12, 13, 26, 50, 102, 202, 33, 7, 22, 8, 61, 1];
 function addAllItems() {
-    let summm = 0;
+    let sum = 0;
     for (let i = 0; i < sn.length; i++) {
-        summm += sn[i];
+        sum += sn[i];
     }
-    return summm;
+    return sum;
 }
 
 console.log(addAllItems());
 
 // console.log(sn.reduce());
-function adds(a, b) {
-    return a + b;
+function adds() {
+    return sn.reduce((a, b) => a + b);
 }
-console.log(adds(23, 27));
+console.log(adds());
 
 // 25. & 26. Declare a function name sumOfOdds & sumOf Evens. It takes a number parameter and it adds all the odd numbers in that - range.
 function sumOfNumbers() {
@@ -407,16 +422,6 @@ function someNums(number) {
         console.log(number + ' is odd.');
         oddNums.push(number);
     }
-    console.log(arguments.callee.name);
-
-}
-function sumOfArr(arr) {
-    return arr.reduce((a, b) => a + b);
-}
-sumOfArr([3, 2, 1]);
-// 27.Declare a function name evensAndOdds.It takes a positive integer as parameter and it counts number of evens and odds in the number.
-function evensANDodds(countsNums) {
-    return countsNums.length;
 }
 console.log(someNums(3));
 console.log(someNums(2));
@@ -427,6 +432,16 @@ console.log(someNums(1));
 console.log(someNums(4));
 console.log(someNums(6));
 console.log(someNums(7));
+
+
+function sumOfArr(arr) {
+    return arr.reduce((a, b) => a + b, 0);
+}
+console.log(sumOfArr([3, 2, 1, 5]));
+// 27.Declare a function name evensAndOdds.It takes a positive integer as parameter and it counts number of evens and odds in the number.
+function evensANDodds(countsNums) {
+    return countsNums.length;
+}
 console.log(oddNums);
 console.log(evensANDodds(oddNums) + ' odd numbers are available in the list.');
 console.log(evenNums);
@@ -595,7 +610,7 @@ function HexaToRGB(hexa) {
 }
 console.log(HexaToRGB(d));
 
-const convertHexaToRgb = (r, g, b)=> {
+const convertHexaToRgb = (r, g, b) => {
     let red = HexaToRGB(r);
     let green = HexaToRGB(g);
     let blue = HexaToRGB(b);
@@ -756,6 +771,16 @@ function CalsomeNos() {
     }
 }
 CalsomeNos();
+
+const whichOneisODD = (n) => {
+    if (n % 2 !== 0) {
+        console.log(n + 'is odd.');
+    } else {
+        console.log(n + 'is Even.');
+    }
+}
+whichOneisODD(2);
+
 console.log("*********************");
 function arrUnits() {
     let allEvens = 0;
@@ -772,3 +797,130 @@ function arrUnits() {
 console.log(arrUnits());
 
 console.log(" ");
+
+
+
+
+//
+let cc = 'Declare a function name someNums.';
+const ccd = Array.from(cc);
+console.log(ccd);
+
+//
+function isPrime(num) {
+    if (num < 1) {
+        return false;
+    } else if (num <= 3) {
+        return true;
+    } else if (num % 2 === 0 || num % 3 === 0) {
+        return false;
+    }
+
+    let i = 5
+    while (i * i <= num) {
+        if (num % i === 0 || num % (i + 2) === 0) {
+            return false
+        }
+        i += 6
+    }
+    return true
+}
+console.log(isPrime(7));
+//
+function check_Palindrome(str_entry) {
+    // Change the string into lower case and remove  all non-alphanumeric characters
+    let cstr = str_entry.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '');
+    let ccount = 0;
+    // Check whether the string is empty or not
+    if (cstr === "") {
+        console.log("Nothing found!");
+        return false;
+    }
+    // Check if the length of the string is even or odd 
+    if ((cstr.length) % 2 === 0) {
+        ccount = (cstr.length) / 2;
+    } else {
+        // If the length of the string is 1 then it becomes a palindrome
+        if (cstr.length === 1) {
+            console.log("Entry is a palindrome.");
+            return true;
+        } else {
+            // If the length of the string is odd ignore middle character
+            ccount = (cstr.length - 1) / 2;
+        }
+    }
+    // Loop through to check the first character to the last character and then move next
+    for (let x = 0; x < ccount; x++) {
+        // Compare characters and drop them if they do not match 
+        if (cstr[x] != cstr.slice(-1 - x)[0]) {
+            console.log("Entry is not a palindrome.");
+            return false;
+        }
+    }
+    console.log("The entry is a palindrome.");
+    return true;
+}
+console.log(check_Palindrome('madamw'));
+console.log(check_Palindrome('madam'));
+
+
+//
+
+
+//
+const string1 = 'level';
+const string2 = 'house';
+
+const isPalindrome = (string) => string === string.split('').reverse().join('');
+console.log(isPalindrome(string1))
+
+//
+const isEmpty3 = value => {
+    if (typeof value == 'number') {
+        return false;
+    }
+    return (
+        value === null ||
+        value === undefined ||
+        (typeof value === 'string' && value.trim().length === 0) ||
+        (typeof value === 'object' && Object.keys(value).length === 0)
+    );
+};
+console.log(isEmpty3());
+//
+
+function getPrimesInRange(beginning, ending) {
+
+    // declare empty array for prime numbers
+    let primes = [];
+
+    // loop through the range
+    for (let number = beginning; number < ending + 1; number++) {
+
+        // all numbers have at least one factor (themselves)
+        let factors = 1;
+
+        // loop through the divisors of the number, starting at 1 and ending at half the number. Examples:
+        // If number = 1, the loop doesn't run
+        // If number = 2, the loop runs once (for divisor 1)
+        // If number = 6, the loop runs three times (for divisors 1, 2, and 3)
+        // If number = 7, the loop runs three times (for divisors 1, 2, and 3)
+        // etc
+        for (let divisor = 1; divisor < Math.ceil((number + 1) / 2); divisor++) {
+            if (number % divisor === 0) {
+                factors++
+            }
+        };
+
+        // if the number has exactly two factors (1 and itself), it is prime
+        if (factors === 2) {
+            primes.push(number)
+        };
+    };
+
+    console.log(primes);
+    return primes;
+};
+
+getPrimesInRange(1, 100);
+getPrimesInRange(-10, 10);

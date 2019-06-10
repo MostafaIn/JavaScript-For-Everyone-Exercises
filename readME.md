@@ -2,7 +2,7 @@
 
 ## Demo
 
-[solutions here](https://mostafain.github.io/JavaScript-For-Everyone-Exercises/ExercisesIndex.html)
+[solutions here](https://mostafain.github.io/JavaScript-For-Everyone-ExercisesWithSolutions/ExercisesIndex.html)
 
 ![screenshot Demo](demoPic.png)
 
@@ -25,5 +25,10 @@
 12. functions
 ----------------------------
 1. Test One Solutions
+2. Test Two Solutions
+3. Test Three Solutions
+4. Test Four Solutions
+----------------------------
+1. fundamental
 
 ##### this is ongoing ...

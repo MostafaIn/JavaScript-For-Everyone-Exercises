@@ -1,3 +1,5 @@
+console.log('*****************************  TEST ONE SOLUTION   ***********************************');
+
 
 // 1. Looping a triangle Write a loop that makes seven calls to console.log to output the following triangle:
 for (let i = 1; i <= 5; i++) {
@@ -36,16 +38,15 @@ const FizzBuzz = () => {
     let FizzBuzz = [];
     for (let i = 1; i <= 100; i++) {
         // console.log(i);
-        // FizzBuzz.push(i);
         if (i % 3 === 0) {
             //    console.log(i,'Fizz');
-            FizzBuzz.push('Fizz');
+            FizzBuzz.push(i + 'Fizz');
         } else if (i % 5 === 0) {
             //   console.log(i,'Buzz');
-            FizzBuzz.push('Buzz');
+            FizzBuzz.push(i + 'Buzz');
         } else {
             // console.log(i,'FizzBuzz');
-            FizzBuzz.push('FizzBuzz');
+            FizzBuzz.push(i + 'FizzBuzz');
         }
     }
     return FizzBuzz;
@@ -81,6 +82,7 @@ const reverseArray = (arr) => {
     return newArr;
 }
 console.log(reverseArray(['a', 'b', 'c']));
+console.log(reverseArray([1, 2, 3]));
 
 /* 5. Modifying an array Write a function called modifyArray takes array as parameter and modifies 
 the fifth item of the array and returns the array. If the array length is less than five it return ‘item not found’.*/
@@ -97,7 +99,7 @@ const modifyArray = (arr) => {
 }
 console.log(modifyArray([1, 2, 3, 4, 5]));
 console.log(modifyArray([1, 4, 5]));
-console.log(modifyArray(['apple', 'milk', 'kachalo', 'nankhoshk', 'eee']));
+console.log(modifyArray(['apple', 'milk', 'bread', 'egg', 'tea']));
 
 
 /* 6. .Write a function which returns array of seven random numbers in a range of 0-9. All the numbers must be unique*/
@@ -118,7 +120,7 @@ console.log(sevenRandomNum());
 const sumTotal = (...arr) => {
     let total = 0;
     for (item of arr) {
-        total = total + item
+        total += item
     };
     return total;
 }
@@ -157,7 +159,7 @@ const annualIncome = () => {
 console.log(annualIncome());
 
 /* 10. Create a function that takes two strings and returns true if the first argument ends with the second argument; 
-otherewise return false . Take two strings as arguments. Determine if second string matches ending of first string. 
+otherwise return false . Take two strings as arguments. Determine if second string matches ending of first string. 
 Return boolean value. Example*/
 
 const matchEnd2 = (s1, s2) => {

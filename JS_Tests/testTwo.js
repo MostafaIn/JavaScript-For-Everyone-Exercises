@@ -33,7 +33,7 @@ console.log(countWords(paragraph, 'teaching', 'you'));
 
 
 // 2. Write a function which takes an array parameter and returns an array of the data types of each item:
-const checkDataTypes = (p) => {
+const checkDataTypes = p => {
     const e = [];
     p.forEach(element => {
         e.push(typeof element);
@@ -47,15 +47,15 @@ const mixedData = ["John", 25, "David", 30, "Sara", 22];
 console.log(checkDataTypes(mixedData));
 
 // 3. Create a function which filter ages greater than 18.
-const agesGreater18 = (agesArr) => {
+const agesGreater18 = agesArr => {
     // const arr= [];
     // agesArr.filter( age =>{
-    //     if(age > 18){
+    //     if(age >= 18){
     //         arr.push(age);
     //     }
     // })
     // return arr;
-    return agesArr.filter(age => age >= 18)
+    return agesArr.filter(age => age >= 18);
 }
 const ages = [35, 30, 17, 18, 15, 22, 16, 20];
 console.log(agesGreater18(ages));
@@ -146,7 +146,7 @@ const removeProduct = (removedItemIndex) => {
     const myShoppingCart = shoppingCart;
     return myShoppingCart;
 }
-console.log(removeProduct(0));
+console.log(removeProduct(4));
 
 const removeAll = (arr) => {
     while (arr.length > 0) {
@@ -198,7 +198,7 @@ console.log(todoList);
 const editTask = (index, task, time, completed) => {
     return todoList.splice(index, 1, { task, time, completed });
 }
-console.log(editTask(1, 'JS Test is tomarrow', displayTime(), false));
+console.log(editTask(1, 'JS Test is TODAY', displayTime(), false));
 console.log(todoList);
 
 
@@ -287,7 +287,7 @@ const addUser = (arr, user) => {
         }
     }
     arr.push(user);
-return arr;
+    return arr;
 }
 console.log(addUser(users, mostafa));
 console.log(addUser(users, mostafa));
@@ -304,12 +304,12 @@ const scoresGreaterThan85 = () => {
 }
 console.log(scoresGreaterThan85());
 
-const addUserSkill=(arr,name,skill)=>{
-    let found=false;
-    for(const user of arr){
-        if(user.name === name){
+const addUserSkill = (arr, name, skill) => {
+    let found = false;
+    for (const user of arr) {
+        if (user.name === name) {
             user.skills.push(skill);
-            found=true;
+            found = true;
             return arr;
             break;
         }
@@ -318,4 +318,4 @@ const addUserSkill=(arr,name,skill)=>{
         return ' this user does not exist ';
     }
 }
-console.log(addUserSkill(users,'mostafa','Asp.net'));
+console.log(addUserSkill(users, 'mostafa', 'Asp.net'));
