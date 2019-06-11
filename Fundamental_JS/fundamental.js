@@ -110,11 +110,14 @@ console.log(randomHexColorCode());
 
 /* 9. Write a JavaScript program to return the minimum-maximum value of an array, 
 after applying the provided function to set comparing rule.*/
-const MinMax = (arr, comparator = (a, b) => a - b) => arr.reduce((a, b) => (comparator(a, b) >= 0 ? b : a));
-const arr9 = [3333333, 44, 55444, 244422, 1114444, 888, 477322];
-console.log(MinMax(arr9,(a,b) => b -a));
+const MinMax = (arr, comparator = (a, b) => a + b) => arr.reduce((a, b) => (comparator(a, b) >= 0 ? b : a));
+const arr9 = [3333333, 44, 55444, 244422, 1114444, 8866658, 477322, 5];
+console.log(MinMax(arr9, (a, b) => b - a));
 
-
+/* 10. Write a JavaScript function that returns true 
+if the provided predicate function returns true for all elements in a collection, false otherwise. */
+const bifurcate = (arr,filter) => arr.reduce((acc, val, i) => (acc[filter[i] ? 0 : 1].push(val), acc), [[], []]);
+console.log(bifurcate([11,22,33,44,55],[true,true,false,true,false]));
 
 
 
