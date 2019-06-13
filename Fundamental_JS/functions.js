@@ -318,8 +318,103 @@ const bubbleSort = list => {
 console.log(bubbleSort(listArr));
 
 // second method
-const sorting = list => list.sort((a,b) => b - a);
+const sorting = list => list.sort((a, b) => b - a);
 console.log(sorting(listArr));
 
 
 /* 22. Write a JavaScript function that accept a list of country names as input and returns the longest country name as output. */
+const longestCountryName = list => {
+    const longestName = list.sort((a, b) => (a.length > b.length) ? -1 : 1).pop();
+    return longestName;
+}
+console.log(longestCountryName(['Afghanistan', 'Pakistan', 'India', 'Iran']));
+
+// second method
+const longestCountryName2 = list => {
+    let longestName = '';
+    for (let i of list) {
+        (i.length > longestName.length) ? longestName = i : null;
+    }
+    return longestName;
+}
+console.log(longestCountryName2(["Finland", "Sweden", "Norway", "Denmark"]));
+
+
+/* 23. Write a JavaScript function to find longest substring in a given a string without repeating characters. */
+const longestSubstring = str => {
+    let longest = '';
+    let l = str.length;
+    for (let i = 0; i < l; i++) {
+        let newStr = '';
+        let counter = 0;
+        while (newStr.includes(str[i]) === false) {
+            if (i === l) break;
+            newStr += str[i];
+            i++;
+            counter++;
+        }
+        i -= counter;
+        if (newStr.length >= longest.length) {
+            longest = newStr
+        }
+    }
+    return longest;
+}
+console.log(longestSubstring('example.com'));
+console.log(longestSubstring('google.com'))
+
+// second method
+const longestSub = str => {
+    let newStr = '';
+    for (let i = 0; i < str.length; i++) {
+        if (newStr.indexOf(str[i]) === -1) {
+            newStr += str[i];
+        }
+    }
+    return newStr;
+}
+console.log(longestSub('the way , this is mostafa'));
+console.log(longestSub('example.com'));
+console.log(longestSub('google.com'));
+
+
+/* 24. Write a JavaScript function that returns the longest palindrome in a given string.*/
+const note = '"HYT BCABA DEd FGHA BCD EDCBA GHThg FYW 12332 456 789 876 54 renner WE TYG DE"';
+console.log(note.split(' '));
+const longestPalindrome = str => {
+    let strs = str.split(' ');
+    let p = [];
+    for (let i = 0; i < strs.length; i++) {
+        if (isPalindrome(strs[i])) {
+            p.push(strs[i]);
+        }
+    }
+    let is = p.sort((a, b) => (a.length > b.length) ? 1 : -1).pop();
+    return is;
+}
+console.log(longestPalindrome(note));
+
+
+/* 25. Write a JavaScript program to pass a 'JavaScript function' as parameter. */
+const test = (a, b, op) => op(a, b);
+const sum = (a, b) => a + b;
+console.log(test(2, 3, sum));
+
+// second method
+const callME = () => {
+    return me();
+}
+const me = () => {
+    let i = 'this is me';
+    return i;
+}
+console.log(callME());
+
+
+/* 26. Write a JavaScript function to get the function name. */
+function mostafa() {
+    console.log(arguments.callee.name);
+}
+mostafa();
+
+
