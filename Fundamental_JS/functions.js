@@ -1,4 +1,3 @@
-
 /* 1. Write a JavaScript function that reverse a number*/
 const reverseNumber = number => {
     let result = number.toString().split('');
@@ -32,6 +31,7 @@ const isPalindrome = str => {
 console.log(isPalindrome('Noon'));
 console.log(isPalindrome('mAdaM'));
 console.log(isPalindrome(12121));
+console.log(isPalindrome('A man, a plan, a canal. Panama'));
 
 
 /* 3. Write a JavaScript function that returns a passed string with letters in alphabetical order.*/
@@ -45,18 +45,20 @@ const firstLetterUppercase = word => {
     let wordArr = word.split(' ');
     let newWordArr = [];
     for (let i = 0; i < wordArr.length; i++) {
-        newWordArr.push(wordArr[i].charAt(0).toUpperCase() + wordArr[i].slice(1));
+        newWordArr.push(wordArr[i].charAt(0).toUpperCase() + wordArr[i].slice(1).toLowerCase());
     }
     return newWordArr.join(' ');
 }
 console.log(firstLetterUppercase('my name is mostafa'));
+console.log(firstLetterUppercase('MOSTAFA'));
 
 // second method
 const capitalize = str => {
-    let strs = str.split(' ');
+    let strs = str.toLowerCase().split(' ');
     return strs.map(e => e.charAt(0).toUpperCase() + e.slice(1)).join(' ');
 }
 console.log(capitalize('i have a new car.'));
+console.log(capitalize('MOSTAFA.'));
 
 
 /* 5. Write a JavaScript function that accepts a string as a parameter and find the longest word within the string.*/
@@ -379,7 +381,7 @@ console.log(longestSub('google.com'));
 
 
 /* 24. Write a JavaScript function that returns the longest palindrome in a given string.*/
-const note = '"HYT BCABA DEd FGHA BCD EDCBA GHThg FYW 12332 456 789 876 54 renner WE TYG DE"';
+const note = '"HYT BCABA DEd FGHA BCD EDCBA GHThg FYWYF 12332 456 789 876 54 renner WE TYG DE"';
 console.log(note.split(' '));
 const longestPalindrome = str => {
     let strs = str.split(' ');

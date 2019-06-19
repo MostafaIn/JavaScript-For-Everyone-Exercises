@@ -30,6 +30,38 @@ console.log(solveQuadratic(1, -1, -2)); //{2, -1}
 console.log(solveQuadratic(1, 7, 12)); //Set(2) {-3, -4}
 console.log(solveQuadratic(1, 0, -4)); //{2, -2}
 console.log(solveQuadratic(1, -1, 0)); //{1, 0}
+
+const solveQuadratic2 = (a = 1, b = 0, c = 0) => {
+    // if (a === 0) {
+    //     return 'Not a quadratic equation';
+    // }
+    let Qset = new Set();
+    let delta = Math.sqrt(b * b - 4 * a * c);
+    let d = 2 * a;
+    let firstRoot, secondRoot;
+    if (delta === 0) {
+        firstRoot = -b / (2 * a);
+        Qset.add(firstRoot);
+    } else if (delta > 0) {
+        firstRoot = (-b + delta) / d;
+        secondRoot = (-b - delta) / d;
+        Qset.add(firstRoot);
+        Qset.add(secondRoot);
+    }
+
+    return Qset;
+}
+console.log(solveQuadratic2()); //Set(1) {0}
+console.log(solveQuadratic2(1, 2, 3)); // Set(0) {}
+console.log(solveQuadratic2(1, 4, 4)); //Set(1) {-2}
+console.log(solveQuadratic2(1, -1, -2)); //{2, -1}
+console.log(solveQuadratic2(1, 7, 12)); //Set(2) {-3, -4}
+console.log(solveQuadratic2(1, 0, -4)); //{2, -2}
+console.log(solveQuadratic2(1, -1, 0)); //{1, 0}
+
+
+
+
 /* =============================== QUESTION 2 ================================================
     Create a function called isPrime which check if a number is prime or not.
   ============================================================================================*/
