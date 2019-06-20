@@ -85,9 +85,9 @@ const wordsIn = (s) => {
     keys.sort((a, b) => count[b] - count[a]);
     for (let i = 0; i < keys.length; i++) {
         let key = keys[i];
-        return key + " : " + count[key];
+        // return key + " : " + count[key];
     }
-    // return keys;
+    return count;
 }
 console.log(wordsIn(myText));
 
@@ -103,7 +103,7 @@ function wordsObj(t) {
         // keys.push(word);
         if (count[word] === undefined) {
             count[word] = 1;
-            keys.push(word); 
+            keys.push(word);
         } else {
             count[word] = count[word] + 1;
         }
@@ -113,3 +113,22 @@ function wordsObj(t) {
 console.log(wordsObj(myText));
 
 ///
+function sum(...args){
+    if(args.length === 1){
+        const [fArg] = args;
+        if(fArg instanceof args){
+            return sum(...fArg);
+        }
+    }
+    return args.reduce((a,b)=> a + b);
+}
+console.log(sum(2,3,4,10));
+
+
+/// use localecompare function to sort an array.
+const arrFruit=['mango', 'ananas','banana','apple','orange','cherry','carrot'];
+
+const sortArr = arr =>{
+    return arr.sort((a,b) => a.localeCompare(b));
+}
+console.log(sortArr(arrFruit));

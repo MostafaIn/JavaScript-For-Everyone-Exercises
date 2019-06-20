@@ -9,6 +9,16 @@ const reverseNumber = number => {
 }
 console.log(reverseNumber(123456));
 
+// reverse a string
+const stringRev = str => {
+    let revStr = '';
+    for (let i = str.length - 1; i >= 0; i--) {
+        revStr += str[i];
+    }
+    return revStr;
+}
+console.log(stringRev('mostafa hazareh'));
+
 
 /* 2. Write a JavaScript function that checks whether a passed string is palindrome or not? 
 A palindrome is word, phrase, or sequence that reads the same backward as forward, e.g., madam or nurses run. */
