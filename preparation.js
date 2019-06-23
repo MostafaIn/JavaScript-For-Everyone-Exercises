@@ -1,17 +1,66 @@
 
 // 1. Looping a triangle Write a loop that makes seven calls to console.log to output the following triangle;
+const loopTriangle = (char, times) => {
+  let character = '';
+  while (times > 0) {
+    character += char;
+    times--;
+  }
+  return character;
+}
+console.log(loopTriangle('$', 7));
 
-
+const loopTriangle2 = (c, t) => {
+  let char;
+  for (let i = 1; i <= t; i++) {
+    for (let j = 1; j < i; j++) {
+      char += c;
+    }
+    console.log(char);
+    char = '';
+  }
+  return char;
+}
+loopTriangle2('*', 10);
 
 /* 2. FizzBuzz Write a program that uses console.log to print all the numbers from 1 to 100, with two exceptions.
 For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5(and not 3),
     print "Buzz" instead.When you have that working, modify your program to print "FizzBuzz" for numbers 
 that are divisible by both 3 and 5(and still print "Fizz" or "Buzz"for numbers divisible by only one of those).*/
-
-
+const FizzBizz = () => {
+  let list = [];
+  for (let i = 1; i <= 100; i++) {
+    // console.log(i);
+    if (i % 3 === 0) {
+      list.push(i + 'Fizz');
+    } else if (i % 5 === 0) {
+      list.push(i + 'Bizz')
+    } else {
+      list.push(i + 'FizzBizz')
+    }
+  }
+  return list;
+}
+console.log(FizzBizz());
 
 /* 3. Maximum Math.max returns its largest argument. We can build something like that now.
 Write a function findMax that takes three arguments and returns their maxiumum. Without method Math.max method.*/
+const listN = [12, 34, 45, 2443, 13, 404, 43];
+const findMax = arr => Math.max(...arr);
+console.log(findMax(listN));
+
+const findMax2 = (e1, e2, e3) => {
+  if (e1 > e2 && e1 > e3) {
+    return e1
+  } else if (e2 > e1 && e2 > e3) {
+    return e2
+  } else if (e3 > e1 && e3 > e2) {
+    return e3
+  } else {
+    return 0
+  }
+}
+console.log(findMax2(1112, 22223, 45));
 
 
 
@@ -19,28 +68,78 @@ Write a function findMax that takes three arguments and returns their maxiumum. 
 its elements appear. For this exercise, write a function, reverseArray. The reverseArray,
 takes an array as argument and produces a new array that has the same elements in the inverse order.
 Without reverse method.*/
-
+const revArr = arr => {
+  let rev = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    rev.push(arr[i]);
+  }
+  return rev;
+}
+console.log(revArr(listN));
 
 
 /* 5. Modifying an array Write a function called modifyArray takes array as parameter and modifies
 the fifth item of the array and returns the array. If the array length is less than five it return ‘item not found’.*/
-
-
+const modifyArr = arr => {
+  if (arr.length < 5) {
+    return 'item not found!';
+  } else {
+    arr.splice(4, 1, 'fifth');
+  }
+  return arr;
+}
+console.log(modifyArr(listN));
 
 /* 6. .Write a function which returns array of seven random numbers in a range of 0-9. All the numbers must be unique*/
-
+const randArr = () => {
+  let arrRandom = [];
+  while (arrRandom.length < 7) {
+    const r = Math.floor(Math.random() * 9);
+    if (!arrRandom.includes(r)) {
+      arrRandom.push(r);
+    }
+  }
+  return arrRandom;
+}
+console.log(randArr());
 
 
 /* 7. Write a function which takes any number of arguments and return the sum of the arguments.*/
-
+const sumArgs = (...arr) => {
+  let total = 0;
+  for (item of arr) {
+    total += item;
+  }
+  return total;
+}
+console.log(sumArgs(12, 34, 44, 2, 2, 35, 45, 46));
 
 
 /* 8. Write a function which removes items from the middle of an array and replace with three items.*/
+const list8 = ['item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7', 'item8', 'item9'];
+console.log(list8);
+const removeFromMid = (arr, ...replace) => {
+  let midItem = (arr.length - 1) / 2;
+  let cMid = Math.floor(midItem) !== Math.ceil(midItem) ? 2 : 1;
+  arr.splice(midItem, cMid, ...replace);
+  return arr;
+}
+console.log(removeFromMid(list8, "mina", "sina", "han"));
 
 
+/* 9. Calculate the total annual income of the person by extracting the following text.*/
+const c9 = 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'.split(/\W+/);
+console.log(c9);
 
-/* 9. Calculate the total annual income of the person by extracting the following text.
-'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'*/
+const totalAnnualIncome = () => {
+  let salary = parseInt(c9[2]);
+  let bonus = parseInt(c9[8]);
+  let courses = parseInt(c9[12]);
+  let totalIncome = (salary * 12) + bonus + (courses * 12);
+  return totalIncome;
+}
+console.log(totalAnnualIncome());
+
 
 
 /* 10. Create a function that takes two strings and returns true if the first argument ends with the second argument;
@@ -126,7 +225,7 @@ Write a function which editUser if the user exist in the users array.*/
   ============================================================================================= */
 
 
-/* 1. Create a function which solve quadratic equation ax2 + bx + c = 0. 
+/* 1. Create a function which solve quadratic equation ax2 + bx + c = 0.
 A quadratic equation may have one, two or no solution.
 The function should return a set of the solution(s).*/
 
