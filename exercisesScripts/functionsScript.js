@@ -924,3 +924,15 @@ function getPrimesInRange(beginning, ending) {
 
 getPrimesInRange(1, 100);
 getPrimesInRange(-10, 10);
+
+
+/// spreed operation 
+let myList = ['mosi','rohy','mori'];
+let newArr;
+const addME = (arr,name) =>{
+    newArr =[...arr,name];
+    return newArr;
+}
+console.log(addME(myList,'eddi'));
+console.log(addME(myList,'pery'));
+console.log(newArr);

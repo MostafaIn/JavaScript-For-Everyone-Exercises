@@ -70,7 +70,7 @@
         /* 5. a.  Create a function called reverse which take a parameter and it returns the reverse of the parameter.
          Don't use the built in reverse method.*/
         const reverseItem = para => {
-            const revItem = para.split('');
+            const revItem = para.toString().split('');
             let rev = [];
             for (i = revItem.length - 1; i >= 0; i--) {
                 rev.push(revItem[i]);
@@ -78,7 +78,7 @@
             return rev.join('');
         }
         console.log(reverseItem('cat'));
-        console.log(reverseItem('123'));
+        console.log(reverseItem(123));
 
         // 5. b.Create a function called isPalindrome which check if a parameter is a palindrome or not.
         const isPalindrome = str => {

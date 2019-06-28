@@ -20,11 +20,11 @@ const countWords = (para, w1, w2) => {
         }
     }
     if (count1 < count2) {
-        return `The word ${w2}(${count2}) more frequently occured than ${w1}(${count1}).`
+        return `The word ${w2}(${count2}) more frequently occurred than ${w1}(${count1}).`
     } else if (count1 > count2) {
-        return `The word ${w1}(${count1}) more frequently occured than ${w2}(${count2}).`
+        return `The word ${w1}(${count1}) more frequently occurred than ${w2}(${count2}).`
     } else {
-        return `The word ${w1}(${count1}) is the same frequently occured than ${w2}(${count2}).`
+        return `The word ${w1}(${count1}) is the same frequently occurred than ${w2}(${count2}).`
     }
 };
 

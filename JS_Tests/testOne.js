@@ -124,7 +124,7 @@ const sumTotal = (...arr) => {
     };
     return total;
 }
-console.log(sumTotal(3, 2, 5, 15, 34));
+console.log(sumTotal(3, 2, 6, 15, 34));
 
 //
 function sumTotal2() {
@@ -154,7 +154,7 @@ const annualIncome = () => {
     const annualBonus = parseInt(sentence[8]);
     const onlineCourses = parseInt(sentence[12]);
     TotalIncome = (salary * 12) + annualBonus + (onlineCourses * 12);
-    return TotalIncome;
+    return `${TotalIncome}$`;
 }
 console.log(annualIncome());
 
@@ -163,11 +163,11 @@ otherwise return false . Take two strings as arguments. Determine if second stri
 Return boolean value. Example*/
 
 const matchEnd2 = (s1, s2) => {
-    let check = true;
+    // let check = true;
     if (s1.slice(-s2.length) !== s2) {
-        return check = false;
+        return false;
     }
-    return check;
+    return true;
 }
 console.log(matchEnd2('integrify', 'ify'));
 console.log(matchEnd2('integrify', 'fi'));

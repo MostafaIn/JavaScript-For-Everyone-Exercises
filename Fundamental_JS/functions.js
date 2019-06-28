@@ -82,7 +82,7 @@ const findLongest = str => {
     }
     return result;
 }
-console.log(findLongest('this is my best experience to practice javascript.'));
+console.log(findLongest('this is my best ExperIence to practice javascript.'));
 
 // second method
 const longestWord = word => {
@@ -336,7 +336,7 @@ console.log(sorting(listArr));
 
 /* 22. Write a JavaScript function that accept a list of country names as input and returns the longest country name as output. */
 const longestCountryName = list => {
-    const longestName = list.sort((a, b) => (a.length > b.length) ? -1 : 1).pop();
+    const longestName = list.sort((a, b) => (a.length > b.length) ? 1 : -1).pop();
     return longestName;
 }
 console.log(longestCountryName(['Afghanistan', 'Pakistan', 'India', 'Iran']));

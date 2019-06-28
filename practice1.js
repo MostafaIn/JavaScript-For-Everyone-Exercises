@@ -6,18 +6,18 @@ const solveQuadratic = (a = 1, b = 0, c = 0) => {
         return 'Not a quadratic equation';
     }
     const determinate = b ** 2 - 4 * a * c;
-    // const solnSet = new Set();
-    const solnSet = new Array();
+    const solnSet = new Set();
+    // const solnSet = new Array();
 
     let root1, root2;
     if (determinate === 0) {
         root1 = -b / (2 * a);
-        solnSet.push(root1);
+        solnSet.add(root1);
     } else if (determinate > 0) {
         root1 = ((-b + Math.sqrt(determinate)) / 2) * a;
         root2 = ((-b - Math.sqrt(determinate)) / 2) * a;
-        solnSet.push(root1);
-        solnSet.push(root2);
+        solnSet.add(root1);
+        solnSet.add(root2);
     } else {
     }
     return solnSet;
@@ -52,24 +52,24 @@ const validateVar = v => {
 }
 
 //
-const sentence = 'I I I I I I I I I to  to love to read. I love to read in the morning; I love to read on the bus, I love to read at work and at home. I especially love to read before to to to bedtime.'
+// const sentence = 'I I I I I I I I I to  to love to read. I love to read in the morning; I love to read on the bus, I love to read at work and at home. I especially love to read before to to to bedtime.'
 
-const countWords = (sentence, word) => {
-    let s = sentence.split(' ');
-    let total = 0;
-    for (let i = 0; i < s.length; i++) {
-        if (s[i].includes(word)) {
-            total = total + 1;
-        }
-    }
-    return total;
-}
-console.log(countWords(sentence, 'the'));
+// const countWords = (sentence, word) => {
+//     let s = sentence.split(/\W+/);
+//     let total = 0;
+//     for (let i = 0; i < s.length; i++) {
+//         if (s[i].includes(word)) {
+//             total = total + 1;
+//         }
+//     }
+//     return total;
+// }
+// console.log(countWords(sentence, 'read'));
 
 
 
 // 3. You should know how to count the most repeated words in a sentence, a paragraph or in a big chunk of text.
-const wordsIn = (s) => {
+const wordsIn = s => {
     let tokens = s.split(/\W+/).sort((a, b) => a.length < b.length);
     let count = {};
     let keys = [];
