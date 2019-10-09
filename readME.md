@@ -7,7 +7,7 @@
 ![screenshot Demo](demoPic.png)
 
 
-## Table of Contents
+# Table of Contents
 
 #### Exercises with solutions: 
 
