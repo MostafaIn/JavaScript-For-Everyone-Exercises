@@ -8,10 +8,10 @@ const loopTriangle = (char, times) => {
   }
   return character;
 }
-console.log(loopTriangle('$', 7));
+console.log(loopTriangle('*', 7));
 
 const loopTriangle2 = (c, t) => {
-  let char;
+  let char = null;
   for (let i = 1; i <= t; i++) {
     for (let j = 1; j < i; j++) {
       char += c;
@@ -112,7 +112,7 @@ const sumArgs = (...arr) => {
   }
   return total;
 }
-console.log(sumArgs(12, 34, 44, 2, 2, 35, 45, 46));
+console.log(sumArgs(12, 34, 44, 2, 2, 35, 45, 46, 10));
 
 
 /* 8. Write a function which removes items from the middle of an array and replace with three items.*/
@@ -182,7 +182,7 @@ const itemTypes = arr => {
   // let newArr= [];
   // arr.forEach( e => newArr.push(typeof e));
   // return newArr;
-  arr.map(i => typeof i);
+  return arr.map(i => typeof i);
 }
 console.log(itemTypes(arr2));
 
@@ -252,12 +252,12 @@ console.log(finnishCarCode());
 
 /* 7. The following shopping cart has four products.
 Create an addProduct, removeProduct ,editProduct , removeAll functions to modify the shopping cart.*/
-const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey'];
+const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey','Apple'];
 console.log(shoppingCart);
 console.log(shoppingCart.indexOf('Tea'));
 const addProduct = (arr, p) => {
-  arr.splice(0, 0, p);
-  return arr;
+  // arr.push(p);
+  return [...arr,p];
 }
 console.log(addProduct(shoppingCart, 'Apple'));
 /* ****************************************** */
@@ -280,6 +280,7 @@ const editProduct = (arr, p, newP) => {
   for (let i = 0; i < arr.length; i++) {
     arr[i] = arr[i].toLowerCase();
     p = p.toLowerCase();
+    newP = newP.toLowerCase();
   }
   if (!arr.includes(p)) {
     return `this product not in the shoppingCart`;
@@ -306,10 +307,10 @@ Create an addTask, removeTask, editTask, toggleTask, toggleAll, removeAll functi
 
 // 9. Write a function which check if items of an array are unique?
 
-const numArr = [23, 342, 45, 4, 34, 233, 43, 4];
+const numArr = [23, 342, 45, 4, 34, 233, 43];
 const uniqArr = arr => {
   let unique = true;
-  for (let i = 0; i < arr.length; i++) {
+  for (let i  of arr) {
     // arr[i] = arr[i].toString();
     if (arr.indexOf(i) !== arr.lastIndexOf(i)) {
       unique = false;
@@ -375,9 +376,9 @@ console.log(shuffledArr(nameArr));
 A quadratic equation may have one, two or no solution.
 The function should return a set of the solution(s).*/
 const qEq = (a = 1, b = 0, c = 0) => {
-  if(a === 0){
+  if (a === 0) {
     return "this is not a quadratic equation";
-  }` this is not a quadratic equation`;
+  } ` this is not a quadratic equation`;
   let delta = (b ** 2 - 4 * a * c);
   let root1, root2;
   let solutionSet = new Set();
@@ -389,12 +390,12 @@ const qEq = (a = 1, b = 0, c = 0) => {
     root2 = ((-b - Math.sqrt(delta)) / 2) * a;
     solutionSet.add(root1);
     solutionSet.add(root2);
-  }else{
+  } else {
 
   }
-return solutionSet;
+  return solutionSet;
 }
-console.log(qEq(0,1,2));
+console.log(qEq(0, 1, 2));
 
 
 
@@ -455,5 +456,7 @@ This function will helps to like to the product if it is not liked and remove li
 
 
 
+let m;
+console.log(typeof m);
 
 

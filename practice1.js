@@ -132,3 +132,5 @@ const sortArr = arr =>{
     return arr.sort((a,b) => a.localeCompare(b));
 }
 console.log(sortArr(arrFruit));
+
+
