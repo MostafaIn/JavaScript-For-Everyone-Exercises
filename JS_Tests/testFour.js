@@ -90,6 +90,22 @@ console.log(isPrime(2)); // true
 console.log(isPrime(3)); // true
 console.log(isPrime(5)); // true
 
+/* =============================== QUESTION 2.2 ================================================
+    Create a function called isPrimeArr which check an array and display the prime numbers.
+  ============================================================================================*/
+function isPrimeArr(element, index, array) {
+    let start = 2;
+    while (start <= Math.sqrt(element)) {
+        if (element % start++ < 1) {
+            return false;
+        }
+    }
+    return element > 1;
+}
+
+console.log([4, 6, 8, 12].find(isPrimeArr)); // undefined, not found
+console.log([4, 5, 8, 12].find(isPrimeArr)); // 5
+
 /* =============================== QUESTION 3 ================================================
     Write a function rangeOfPrimes. 
     It takes two parameters, a starting number and an ending number .
