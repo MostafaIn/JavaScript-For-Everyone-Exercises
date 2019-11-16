@@ -1,6 +1,6 @@
 // A. a javascript program to remove the repeated words and return clear sentences.
 
-const sentences = 'this is me this me is mostafa me mostafa';
+const sentences = 'this is me this me is mostafa me mostafa this this';
 
 const removeRepeatedWords = (str) => {
 	let arr = str.split(' ');
@@ -14,8 +14,12 @@ const removeRepeatedWords = (str) => {
 };
 console.log(removeRepeatedWords(sentences));
 
-
-
+const removeRepeatedWords2 = (str) => {
+	let arr = str.split(' ');
+	let softArr = [...new Set(arr)];
+	return softArr.join(' ');
+};
+console.log(removeRepeatedWords2(sentences));
 
 // B. this program create and array of objects with merging two array
 let names = ['mosi', 'rohy', 'edi', 'mori', 'dany', 'ss'];
@@ -36,4 +40,3 @@ const returnObj = () => {
 	return list.filter((e) => e.age < 31);
 };
 console.log(returnObj());
-
