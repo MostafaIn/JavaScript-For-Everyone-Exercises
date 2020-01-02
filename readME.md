@@ -24,7 +24,7 @@
 11. arrays
 12. functions
 ----------------------------
-### available in Test branch
+#### available in Test branch
  
 1. Test One Solutions
 2. Test Two Solutions
@@ -33,5 +33,6 @@
 ----------------------------
 
 1. fundamental
+2. CodeWars ...
 
 ##### this is ongoing ...
