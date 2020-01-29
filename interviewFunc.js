@@ -78,4 +78,15 @@ const countItem2 = (arr) => {
 };
 console.log(countItem2(myFruits));
 
-//
+//4.  this program can get the item as an argument and push it to the end of an array.
+const videoIds = [ 'xdrcft123','qazwsx332','asdzxc6544','dcfb112','wssqd44'];
+
+
+const formatList = (currentVideoId) =>{
+    let newVideoIds = videoIds.filter( c => c !== currentVideoId)
+    console.log(newVideoIds.push(currentVideoId))
+    return newVideoIds
+}
+console.log(formatList('qazwsx332'))
+
+
