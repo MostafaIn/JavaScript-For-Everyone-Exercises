@@ -22,7 +22,7 @@ const removeRepeatedWords2 = (str) => {
 console.log(removeRepeatedWords2(sentences));
 
 // 2. this program create and array of objects with merging two array
-let names = ['mosi', 'rohy', 'edi', 'mori', 'dany', 'ss'];
+let names = ['mosi', 'rohy', 'edi', 'mori', 'dany', 'sasy'];
 let ages = [34, 32, 30, 31, 2];
 
 const returnObj = () => {
@@ -89,4 +89,25 @@ const formatList = (currentVideoId) =>{
 }
 console.log(formatList('qazwsx332'))
 
+
+//
+const images= {
+	"banner": "public/event/images/0da20354-af13-4949-808c-d66475d6aa5b/banner.png",
+	"email_banner": "public/event/images/0da20354-af13-4949-808c-d66475d6aa5b/email_banner.png",
+	"logo": "public/event/images/0da20354-af13-4949-808c-d66475d6aa5b/logo.png",
+	"side_banner": "public/event/images/0da20354-af13-4949-808c-d66475d6aa5b/side_banner.png",
+}
+console.log(images.logo)
+
+// search from an array
+
+const searchList = (value) =>{
+	let filtered =  names.filter( f => f.startsWith(value));
+	if(filtered.length === 0){
+		return 'not match';
+	}else{
+		return filtered;
+	}
+}
+console.log(searchList('mo'))
 
