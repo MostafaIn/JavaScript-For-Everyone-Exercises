@@ -111,3 +111,18 @@ const searchList = (value) =>{
 }
 console.log(searchList('mo'))
 
+
+// convert date to an object
+ let startDate = "06-01-2020";
+const getDate = string =>{
+	return (([day, month, year]) => ({ day, month, year }))(string.split('-'));
+}
+console.log(getDate(startDate))
+
+let startDateObj = getDate(startDate);
+console.log(startDateObj.day)
+console.log(startDateObj.month)
+console.log(startDateObj.year)
+
+
+
