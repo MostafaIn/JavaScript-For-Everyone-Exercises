@@ -124,5 +124,44 @@ console.log(startDateObj.day)
 console.log(startDateObj.month)
 console.log(startDateObj.year)
 
+// search any value from an array of objects
+const users=[
+	{
+		name:'mosy',
+		age:35,
+		bio:'this is mostafa.'
+	},
+	{
+		name:'rohy',
+		age:32,
+		bio:'this is rohafza.'
+	},{
+		name:'fri',
+		age:31,
+		bio:'this is farzana.'
+	},
+	{
+		name:'mori',
+		age:33,
+		bio:'this is Morteza.'
+	},
+];
+console.log(users)
+
+const objSearch = (obj,searchItem) =>{
+	let filtered = obj.filter(item =>{
+		// this first vairable return all key and value of objects but the second on just return the value
+		// let str = JSON.stringify(item)  
+		let str = Object.values(item).join(' ')
+		return str.includes(searchItem)
+	})
+	return (filtered.length < 1) ? 'not matched' : filtered;
+}
+
+console.log(objSearch(users,'mos'))
+console.log(objSearch(users,33))
+console.log(objSearch(users,'name'))
+
+
 
 
