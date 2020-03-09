@@ -163,5 +163,14 @@ console.log(objSearch(users,33))
 console.log(objSearch(users,'name'))
 
 
+// get duplicated items of two array
+let arr1 =["1q","2q","3q","4q"]
+let arr2 =["1q","2a","3a","4q"]
+let arr3 = [...arr1,...arr2]
+
+const duplicate = () =>{
+  return arr3.filter((v,i,a) => (a.indexOf(v) !== i))
+}
+console.log(duplicate())
 
 
